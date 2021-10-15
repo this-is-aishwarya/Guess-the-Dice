@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Roll A Dice!</title>
+</head>
+<body>
+    <div class="container2">
+        <div class="main">
+        <img src="1.png" alt="one.png" id="img">
+        <button id="btn" onclick="anim()">Stop Game</button>
+        </div>
+    </div>
+
+    <div class="container1">
+        <div id="game">
+            <!-- <div class="timer">
+                <div class="time_text">Time Left</div>
+                <div class="time_sec">10</div>
+            </div> -->
+            <div class="timer">
+                <p>The dice will change at</p>
+                <div id="countdown">
+                    <div id="countdown-number"></div>
+                    <svg>
+                      <circle r="18" cx="20" cy="20"></circle>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="hud">
+                <div class="hud-item">
+                    <p class="hud-prefix">SCORE</p>
+                    <h1 class="hud-main-text" id="score">0</h1>
+                </div>
+            </div>
+            <div class="option-grid">
+                <div class="choice-container">
+                    <p class="choice-text" id="1">1</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" id="2">2</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" id="3">3</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" id="4">4</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" id="5">5</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" id="6">6</p>
+                </div>
+            </div>
+                 
+
+        </div>
+    </div>
+    
+    <!-- <div class="numbergrid">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+    </div> -->
+    
+    <script src="app.js"></script>
+</body>
+</html>

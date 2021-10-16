@@ -210,15 +210,53 @@ svg circle {
     box-shadow: 0px 0px 2px 0px rgba(148, 22, 22, 0.87);
   }
 
+  .modal-container-correct {
+    outline: rgb(5, 151, 0);
+    position: relative;
+    max-width: 60vw;
+    width: 60vw;
+    height: 30vh;
+    display: grid;
+    place-items: center;
+    background-color: rgb(103, 233, 70);
+    background-image: url("assets/correct.png");
+    background-size: 100% 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 0px rgba(41, 95, 24, 0.87);
+  }
+  .modal-container-correct span{
+      display: none;
+  }
+
+  .modal-container-correct h3{
+    margin: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(7, 88, 31);
+    padding: 5px;
+  }
+  .modal-container-correct h3:after{
+      content: "CORRECT! ✅"; 
+  }
+  .modal-container-correct img{
+      display: none;
+  }
   .modal-container h3{
-      /* margin: 0; */
+      margin: 4px;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       color: rgb(88, 7, 7);
       padding: 5px;
   }
+
+  .modal-container p{
+    margin: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* color: rgb(88, 7, 7);
+    padding: 5px; */
+}
+
   .modal-container img{
-    height: 100px;
-    width: 100px;
+    height: 85px;
+    width: 85px;
     border-radius: 200%;
   }
   
@@ -262,7 +300,7 @@ to {
     .timer{
         width: 100%;
         position: absolute;
-        margin-top: 580px;
+        margin-top: 582px;
         padding: 0;
     }
 

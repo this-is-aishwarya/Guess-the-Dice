@@ -2,6 +2,7 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const scoreText = document.querySelector('#score');
 const selectvarText = document.querySelector('#selectedvar');
 const modal = document.querySelector(".modal-overlay");
+const modalCorrect = document.getElementById("correct");
 
 let score = 0
 let acceptedAnswer = true
@@ -27,29 +28,27 @@ function start(){
 
     function myStopFunction() {
         anim();
-        ch();
+        check();
         clearInterval(myInterval);
         
-        setTimeout(() => {
-            modal.classList.add("open-modal");
-        }, 2500)
     }
 }
 
 document.querySelector(".close-btn").addEventListener("click", () => {
+    modalCorrect.classList.remove("modal-container-correct")
     modal.classList.remove("open-modal");
   });
 
-function check(){
-    const selectedChoice = e.target
-    const selectedAnswer = e.target.id
+// function check(){
+//     const selectedChoice = e.target
+//     const selectedAnswer = e.target.id
 
-    console.log("Selected: " + selectedAnswer)
+//     console.log("Selected: " + selectedAnswer)
 
-    randomNumber = Math.floor(Math.random() * 6) + 1;
+//     randomNumber = Math.floor(Math.random() * 6) + 1;
 
-    console.log("Dice number: " + randomNumber)
-}
+//     console.log("Dice number: " + randomNumber)
+// }
 
 // ------------------------------------
 choices.forEach(choice =>{
@@ -85,10 +84,18 @@ choices.forEach(choice =>{
     })
 })
 
-function ch(){
+function check(){
 
     if(classToApply == 'incorrect'){
-        console.log("Galat");
+        setTimeout(() => {
+            modal.classList.add("open-modal");
+        }, 2500)
+    }
+    else{
+        setTimeout(() => {
+            modalCorrect.classList.add("modal-container-correct")
+            modal.classList.add("open-modal");
+        }, 2500)
     }
 }
 

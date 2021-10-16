@@ -1,6 +1,8 @@
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const scoreText = document.querySelector('#score');
 const selectvarText = document.querySelector('#selectedvar');
+const modal = document.querySelector(".modal-overlay");
+
 let score = 0
 let acceptedAnswer = true
 var randomNumber = 1;
@@ -27,8 +29,16 @@ function start(){
         anim();
         ch();
         clearInterval(myInterval);
+        
+        setTimeout(() => {
+            modal.classList.add("open-modal");
+        }, 2500)
     }
 }
+
+document.querySelector(".close-btn").addEventListener("click", () => {
+    modal.classList.remove("open-modal");
+  });
 
 function check(){
     const selectedChoice = e.target

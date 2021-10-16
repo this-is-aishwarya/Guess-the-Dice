@@ -14,6 +14,15 @@
         <button id="btn" onclick="start()">Start Round</button>
         </div>
     </div>
+    
+    <div class="modal-overlay">
+        <div class="modal-container">
+          <h3>The guess was WRONG!</h3>
+          <p>Click on "Start game" for another try.</p>
+          <img src="./assets/wrong.jpeg" alt="">
+          <button class="close-btn">X</button>
+        </div>
+    </div>
 
     <div class="container1">
         <div id="game">
@@ -38,7 +47,7 @@
             </div>
 
             <div class="timer">
-                <p>The dice will change at</p>
+                <p>The dice will change at </p>
                 <div id="countdown">
                     <div id="countdown-number"></div>
                     <svg>

@@ -10,8 +10,8 @@
 <body>
     <div class="container2">
         <div class="main">
-        <img src="1.png" alt="one.png" id="img">
-        <button id="btn" onclick="anim()">Stop Game</button>
+        <img src="./assets/1.png" alt="one.png" id="img">
+        <button id="btn" onclick="start()">Start Round</button>
         </div>
     </div>
 
@@ -21,6 +21,22 @@
                 <div class="time_text">Time Left</div>
                 <div class="time_sec">10</div>
             </div> -->
+
+                        
+            <div class="hud">
+                <div class="hud-item">
+                    <p class="hud-prefix">SCORE</p>
+                    <h1 class="hud-main-text" id="score">0</h1>
+                </div>
+            </div>
+
+            <div class="hud2">
+                <div class="hud-item2">
+                    <p class="hud-prefix">SELECTED</p>
+                    <h1 class="hud-main-text" id="selectedvar">0</h1>
+                </div>
+            </div>
+
             <div class="timer">
                 <p>The dice will change at</p>
                 <div id="countdown">
@@ -30,13 +46,7 @@
                     </svg>
                 </div>
             </div>
-            
-            <div class="hud">
-                <div class="hud-item">
-                    <p class="hud-prefix">SCORE</p>
-                    <h1 class="hud-main-text" id="score">0</h1>
-                </div>
-            </div>
+
             <div class="option-grid">
                 <div class="choice-container">
                     <p class="choice-text" id="1">1</p>
@@ -61,16 +71,7 @@
 
         </div>
     </div>
-    
-    <!-- <div class="numbergrid">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-    </div> -->
-    
-    <script src="app.js"></script>
+        
+    <script src="app1.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const scoreText = document.querySelector('#score');
+const selectvarText = document.querySelector('#selectedvar');
 let score = 0
 let acceptedAnswer = true
 var randomNumber = 1;
@@ -10,63 +11,36 @@ startGame = () => {
     score = 0
 }
 
+// const rollDice = () => Math.floor(Math.random() * 6) + 1;
+
 choices.forEach(choice =>{
     choice.addEventListener('click', e => {
-        if(!acceptedAnswer) return
-
-        acceptedAnswer = false
         const selectedChoice = e.target
         const selectedAnswer = e.target.id
 
-        console.log(selectedAnswer)
-        // console.log(randomNumber)
+        choice.style.backgroundColor = "yellow"
 
-        let classToApply = selectedAnswer == randomNumber ? 'correct' : 'incorrect'
+        console.log("Selected: " + selectedAnswer)
+        selectvarText.innerText = selectedAnswer
 
-        if(classToApply === 'correct'){
-            incrementScore(SCORE_POINTS)
-        }
+        // const random = rollDice();
 
-        selectedChoice.parentElement.classList.add(classToApply)
+        randomNumber = Math.floor(Math.random() * 6) + 1;
+        console.log("Dice number: " + randomNumber)
 
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply)
-            acceptedAnswer = true
-        }, 1000)
+        
     })
 })
 
-incrementScore = num => {
-    score += num
-    scoreText.innerText = score
-}
 
 function shuffle(){
-    randomNumber = Math.floor(Math.random() * 6) + 1;
     const img = document.getElementById("img");
     console.log(randomNumber);
-    img.setAttribute("src", `${randomNumber}.png`)
+    img.setAttribute("src", `./assets/${randomNumber}.png`)
 }
 
 function anim(){
     setTimeout(shuffle, 1000);
     const img = document.getElementById("img");
-    img.setAttribute("src", "dice.gif");
+    img.setAttribute("src", "./assets/dice.gif");
 }
-
-var myInterval = setInterval(anim, 10000);
-
-var countdownNumberEl = document.getElementById('countdown-number');
-var countdown = 10;
-
-countdownNumberEl.textContent = countdown;
-
-setInterval(function() {
-  countdown = --countdown <= 0 ? 10 : countdown;
-  if (countdown === 0){
-      console.log("time up")
-      anim();
-  }
-  countdownNumberEl.textContent = countdown;
-}, 1000);
-

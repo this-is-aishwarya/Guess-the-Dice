@@ -5,9 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
     <title>Roll A Dice!</title>
 </head>
+<script type='text/javascript'>
+    $(function(){
+    var overlay = $('<div id="overlay"></div>');
+    overlay.show();
+    overlay.appendTo(document.body);
+    $('.popup').show();
+    $('.close').click(function(){
+    $('.popup').hide();
+    overlay.appendTo(document.body).remove();
+    return false;
+    });
+        
+    $('.x').click(function(){
+    $('.popup').hide();
+    overlay.appendTo(document.body).remove();
+    return false;
+    });
+    });
+    </script>
 <body>
+    <!-- Instructions -->
+    <div class='popup'>
+        <h1 class="game-head">Roll The Dice!</h1>
+        <div class='cnt223'>
+            <h1>Instructions</h1>
+            <br />
+            <p>
+            - Click on "Start Round" to start the game.
+            <br/>
+            - Select your guess from the given numbers within 10 seconds.
+            <br/>
+            - The dice spins after 10 seconds.
+            <br />
+            - The player is awarded 10 points for every correct guess.
+            <br />
+            <br />  
+            <a href='' class='close'>Close</a>
+            </p>
+        </div>
+    </div>
+
     <div class="container2">
         <div class="main">
         <img src="./assets/1.png" alt="one.png" id="img">
@@ -81,7 +123,6 @@
 
         </div>
     </div>
-        
     <script src="app1.js"></script>
 </body>
 </html>

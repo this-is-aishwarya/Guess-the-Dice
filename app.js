@@ -28,6 +28,18 @@ choices.forEach(choice =>{
         randomNumber = Math.floor(Math.random() * 6) + 1;
         console.log("Dice number: " + randomNumber)
 
+        let classToApply = selectedAnswer == randomNumber ? 'correct' : 'incorrect'
+
+        if(classToApply === 'correct'){
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            acceptedAnswer = true
+        }, 1000)
         
     })
 })

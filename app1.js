@@ -1,3 +1,24 @@
+$(function(){
+    var overlay = $('<div id="overlay"></div>');
+    overlay.show();
+    overlay.appendTo(document.body);
+    $('.popup').show();
+    $('.close').click(function(){
+    $('.popup').hide();
+    overlay.appendTo(document.body).remove();
+    return false;
+    });
+    
+    
+     
+    
+    $('.x').click(function(){
+    $('.popup').hide();
+    overlay.appendTo(document.body).remove();
+    return false;
+    });
+    });
+
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const scoreText = document.querySelector('#score');
 const selectvarText = document.querySelector('#selectedvar');
@@ -20,10 +41,10 @@ function start(){
 
     var countdown = 10;
     countdownNumberEl.textContent = countdown;
-
+   
     var myInterval = setInterval(function() {
-    countdown = --countdown <= 0 ? myStopFunction() : countdown;
-    countdownNumberEl.textContent = countdown;
+        countdown = --countdown <= 0 ? myStopFunction() : countdown;
+        countdownNumberEl.textContent = countdown;
     }, 1000);
 
     function myStopFunction() {
@@ -45,7 +66,7 @@ document.querySelector(".close-btn").addEventListener("click", () => {
 
 //     console.log("Selected: " + selectedAnswer)
 
-//     randomNumber = Math.floor(Math.random() * 6) + 1;
+//     randomNumber = 55Math.floor(Math.random() * 6) + 1;
 
 //     console.log("Dice number: " + randomNumber)
 // }
@@ -59,13 +80,12 @@ choices.forEach(choice =>{
         const selectedChoice = e.target
         const selectedAnswer = e.target.id
 
+        randomNumber = Math.floor(Math.random() * 6) + 1;
+        console.log("Dice number: " + randomNumber)
+
         console.log("Selected: " + selectedAnswer)
         selectvarText.innerText = selectedAnswer
         selectedChoice.parentElement.classList.add('selected')
-
-        randomNumber = Math.floor(Math.random() * 6) + 1;
-
-        console.log("Dice number: " + randomNumber)
         
         classToApply = selectedAnswer == randomNumber ? 'correct' : 'incorrect'
 
@@ -86,14 +106,14 @@ choices.forEach(choice =>{
 
 function check(){
 
-    if(classToApply == 'incorrect'){
+    if(classToApply == 'correct'){
         setTimeout(() => {
+            modalCorrect.classList.add("modal-container-correct")
             modal.classList.add("open-modal");
         }, 2500)
     }
     else{
         setTimeout(() => {
-            modalCorrect.classList.add("modal-container-correct")
             modal.classList.add("open-modal");
         }, 2500)
     }
@@ -106,7 +126,6 @@ incrementScore = num => {
 
 function shuffle(){
     const img = document.getElementById("img");
-    console.log(randomNumber);
     img.setAttribute("src", `./assets/${randomNumber}.png`)
 }
 

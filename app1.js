@@ -1,24 +1,3 @@
-$(function(){
-    var overlay = $('<div id="overlay"></div>');
-    overlay.show();
-    overlay.appendTo(document.body);
-    $('.popup').show();
-    $('.close').click(function(){
-    $('.popup').hide();
-    overlay.appendTo(document.body).remove();
-    return false;
-    });
-    
-    
-     
-    
-    $('.x').click(function(){
-    $('.popup').hide();
-    overlay.appendTo(document.body).remove();
-    return false;
-    });
-    });
-
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const scoreText = document.querySelector('#score');
 const selectvarText = document.querySelector('#selectedvar');
@@ -37,6 +16,7 @@ startGame = () => {
 }
 
 function start(){
+    // Timer starts
     var countdownNumberEl = document.getElementById('countdown-number');
 
     var countdown = 10;
@@ -55,23 +35,6 @@ function start(){
     }
 }
 
-document.querySelector(".close-btn").addEventListener("click", () => {
-    modalCorrect.classList.remove("modal-container-correct")
-    modal.classList.remove("open-modal");
-  });
-
-// function check(){
-//     const selectedChoice = e.target
-//     const selectedAnswer = e.target.id
-
-//     console.log("Selected: " + selectedAnswer)
-
-//     randomNumber = 55Math.floor(Math.random() * 6) + 1;
-
-//     console.log("Dice number: " + randomNumber)
-// }
-
-// ------------------------------------
 choices.forEach(choice =>{
     choice.addEventListener('click', e => {
         if(!acceptedAnswer) return
@@ -80,6 +43,7 @@ choices.forEach(choice =>{
         const selectedChoice = e.target
         const selectedAnswer = e.target.id
 
+        // Generates a random number to display on dice
         randomNumber = Math.floor(Math.random() * 6) + 1;
         console.log("Dice number: " + randomNumber)
 
@@ -91,33 +55,15 @@ choices.forEach(choice =>{
 
         if(classToApply === 'correct'){
             incrementScore(SCORE_POINTS)
-            
         }
-        // selectedChoice.parentElement.classList.add(classToApply)
 
         setTimeout(() => {
-            // selectedChoice.parentElement.classList.remove(classToApply)
             selectedChoice.parentElement.classList.remove('selected')
             acceptedAnswer = true
         }, 1000)
         
     })
 })
-
-function check(){
-
-    if(classToApply == 'correct'){
-        setTimeout(() => {
-            modalCorrect.classList.add("modal-container-correct")
-            modal.classList.add("open-modal");
-        }, 2500)
-    }
-    else{
-        setTimeout(() => {
-            modal.classList.add("open-modal");
-        }, 2500)
-    }
-}
 
 incrementScore = num => {
     score += num
@@ -134,6 +80,28 @@ function anim(){
     const img = document.getElementById("img");
     img.setAttribute("src", "./assets/dice.gif");
 }
+
+function check(){
+
+    if(classToApply == 'correct'){
+        setTimeout(() => {
+            modalCorrect.classList.add("modal-container-correct")
+            modal.classList.add("open-modal");
+        }, 2500)
+    }
+    else{
+        setTimeout(() => {
+            modal.classList.add("open-modal");
+        }, 2500)
+    }
+}
+
+document.querySelector(".close-btn").addEventListener("click", () => {
+    modalCorrect.classList.remove("modal-container-correct")
+    modal.classList.remove("open-modal");
+  });
+
+
 
 
 

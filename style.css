@@ -10,12 +10,7 @@ body{
     background-size: 100% 50%;
 }
 
-/* .container1{
-    width: 100%;
-    display: flex;
-} */
-
-/* Instructions */
+/* ---------Instructions Popup------------ */
 #overlay {
     position: fixed;
     top: 0;
@@ -23,37 +18,38 @@ body{
     width: 100%;
     height: 100%;
     background-color: #000;
-    filter:alpha(opacity=70);
-    opacity: 0.7;
+    filter:alpha(opacity=90);
+    opacity: 0.9;
     z-index: 100;
     display: none;
-    }
-    .cnt223 a{
+}
+
+.instructions a{
     text-decoration: none;
-    }
-    .popup{
+}
+.popup{
     width: 100%;
     margin: 0 auto;
     display: none;
     position: fixed;
     z-index: 101;
-    }
+}
 
-    .game-head{
-        font-size: 2.5rem;
-        margin-top: 30px;
-        padding: 20px;
-        width: 100%;
-        font-family: 'Allerta Stencil';
-        color: #ff6e6a;
-    }
+.game-head{
+    font-size: 2.5rem;
+    margin-top: 30px;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Abril Fatface', serif;
+    color: #ff6e6a;
+}
 
-    .popup h1{
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    .cnt223{
+.popup h1{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.instructions{
     min-width: 600px;
     width: 600px;
     min-height: 150px;
@@ -64,31 +60,31 @@ body{
     padding: 15px 35px;
     border-radius: 5px;
     box-shadow: 0 2px 5px #000;
-    }
-    .cnt223 p{
+}
+.instructions p{
     clear: both;
-        color: #555555;
-        /* text-align: justify; */
-        font-size: 20px;
-        font-family: sans-serif;
-    }
-    .cnt223 p a{
+    color: #555555;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.instructions p a{
     color: #d91900;
     font-weight: bold;
-    }
-    .cnt223 .x{
+}
+.instructions .x{
     float: right;
     height: 35px;
     left: 22px;
     position: relative;
     top: -25px;
     width: 34px;
-    }
-    .cnt223 .x:hover{
+}
+.instructions .x:hover{
     cursor: pointer;
-    }
+}
 
-.container2{
+/* ------------Dice Container ----------*/
+.dice-container{
     width: 400px;
     padding: 50px;
     border: 1px solid black;
@@ -101,7 +97,7 @@ body{
     border-radius: 8px;
 }
 
-.main{
+.dice{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -129,11 +125,7 @@ body{
     outline: none;
     background-color: #e92e3d;
     padding: 15px 0;
-    /* width: 150px; */
     letter-spacing: 1px;
-    /* border-radius: 5px; */
-    /* background: #21d4fd; */
-    /* background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%); */
 }
 
 .hud{
@@ -164,6 +156,7 @@ body{
     position: relative;
 }
 
+/* -------Timer----------- */
 .timer{
     justify-content: center;
     align-items: center;
@@ -217,14 +210,6 @@ body{
     background: linear-gradient(32deg, rgb(209, 223, 11) 0%, rgb(248, 225, 96) 100%);
 }
 
-.correct{
-    background: linear-gradient(32deg, rgba(11,223,36) 0%, rgb(41,232,111) 100%);
-}
-
-.incorrect{
-    background: linear-gradient(32deg, rgba(230,29,29,1) 0%, rgba(224,11,11, 1) 100%);
-}
-
 /* Countdown Timer */
 #countdown {
     position: relative;
@@ -257,7 +242,6 @@ svg circle {
     stroke-width: 2px;
     stroke: #333;
     fill: none;
-    /* animation: countdown 10s linear infinite forwards; */
 }
 
 
@@ -269,9 +253,9 @@ svg circle {
     display: grid;
     place-items: center;
     visibility: hidden;
-  }
+}
   
-  .modal-container {
+.modal-container {
     outline: rgb(88, 7, 7);
     position: relative;
     max-width: 60vw;
@@ -282,9 +266,9 @@ svg circle {
     background-color: white;
     border-radius: 20px;
     box-shadow: 0px 0px 2px 0px rgba(148, 22, 22, 0.87);
-  }
+}
 
-  .modal-container-correct {
+.modal-container-correct {
     outline: rgb(5, 151, 0);
     position: relative;
     max-width: 60vw;
@@ -297,44 +281,42 @@ svg circle {
     background-size: 100% 100%;
     border-radius: 20px;
     box-shadow: 0px 0px 2px 0px rgba(41, 95, 24, 0.87);
-  }
-  .modal-container-correct span{
-      display: none;
-  }
+}
+.modal-container-correct span{
+    display: none;
+}
 
-  .modal-container-correct h3{
+.modal-container-correct h3{
     margin: 4px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(7, 88, 31);
     padding: 5px;
-  }
-  .modal-container-correct h3:after{
-      content: "CORRECT! ✅"; 
-  }
-  .modal-container-correct img{
-      display: none;
-  }
-  .modal-container h3{
-      margin: 4px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      color: rgb(88, 7, 7);
-      padding: 5px;
-  }
-
-  .modal-container p{
+}
+.modal-container-correct h3:after{
+    content: "CORRECT! ✅"; 
+}
+.modal-container-correct img{
+    display: none;
+}
+.modal-container h3{
     margin: 4px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* color: rgb(88, 7, 7);
-    padding: 5px; */
+    color: rgb(88, 7, 7);
+    padding: 5px;
 }
 
-  .modal-container img{
+.modal-container p{
+    margin: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.modal-container img{
     height: 85px;
     width: 85px;
     border-radius: 200%;
-  }
-  
-  .close-btn {
+}
+
+.close-btn {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -342,12 +324,12 @@ svg circle {
     background-color: transparent;
     cursor: pointer;
     font-size: 16px;
-  }
-  
-  .open-modal {
+}
+
+.open-modal {
     visibility: visible;
     z-index: 10;
-  }
+}
   
 
 @keyframes countdown {
@@ -359,14 +341,15 @@ to {
 }
 }
 
+/* Responsiveness */
 @media screen and (max-width: 768px){
-    .container2{
+    .dice-container{
         width: 150px;
         height: 210px;
         transform: translate(-50%, -97%);
     }
 
-    .cnt223{
+    .instructions{
         width: 0;
         min-width: 300px;
     }
@@ -379,7 +362,6 @@ to {
     .timer{
         width: 100%;
         position: absolute;
-        /* margin-top: 582px; */
         padding: 0;
         bottom: 2%;
     }
